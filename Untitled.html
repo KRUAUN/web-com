@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Classroom Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 0;
+    }
+
+    .tech-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(64, 179, 255, 0.3);
+      box-shadow: 0 0 10px 2px rgba(64, 179, 255, 0.2);
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .form-container {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(15px);
+      padding: 30px;
+      border-radius: 24px;
+      width: 600px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+                  0 0 0 1px rgba(255, 255, 255, 0.1),
+                  inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 10;
+      max-height: 90vh;
+      overflow-y: auto;
+      transition: all 0.5s ease;
+    }
+
+    .form-container:hover {
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2), 
+                  0 0 0 1px rgba(255, 255, 255, 0.15),
+                  inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .form-header {
+      position: relative;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 32px;
+      margin: 0;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+    }
+
+    .form-container p {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 0;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    .footer-credit {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 16px;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+                  0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .footer-credit:hover {
+      background: rgba(15, 23, 42, 0.9);
+      transform: translateX(-50%) translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #e2e8f0;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .input-group:focus-within label {
+      color: #38bdf8;
+      transform: translateY(-2px);
+    }
+
+    select,
+    input[type="text"] {
+      width: 100%;
+      height: 50px;
+      padding: 0 10px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      background-color: rgba(30, 41, 59, 0.5);
+      color: white;
+      font-size: 16px; /* ลดขนาดตัวอักษรลงจาก 18px เป็น 16px */
+      outline: none;
+      appearance: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    select:focus,
+    input[type="text"]:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+      background-color: rgba(30, 41, 59, 0.7);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 18px;
+      padding-right: 40px;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+
+    select option {
+      color: #e2e8f0;
+      background-color: #1e293b;
+      padding: 12px;
+      font-size: 16px; /* ลดขนาดตัวอักษรลงจาก 18px เป็น 16px */
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    button {
+      width: 200px;
+      height: 60px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: white;
+      font-size: 28px; /* เพิ่มขนาดตัวอักษรจาก 24px เป็น 28px */
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 1px;
+    }
+
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(45deg);
+      transition: all 0.8s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    }
+
+    button:hover::after {
+      left: 100%;
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 8px rgba(56, 189, 248, 0.3);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #clock-container {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      color: white;
+      background-color: rgba(15, 23, 42, 0.7);
+      padding: 20px 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    #clock-container:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 
+                  0 0 0 1px rgba(56, 189, 248, 0.3);
+    }
+
+    #clock-label {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #94a3b8;
+    }
+
+    #clock {
+      font-family: 'Kanit', sans-serif;
+      font-size: 36px;
+      color: #e2e8f0;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    }
+
+    .tech-decoration {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 35%;
+      height: 70%;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tech-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(56, 189, 248, 0.2);
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    .tech-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      animation-delay: 0s;
+    }
+
+    .tech-circle:nth-child(2) {
+      width: 400px;
+      height: 400px;
+      animation-delay: 0.5s;
+    }
+
+    .tech-circle:nth-child(3) {
+      width: 500px;
+      height: 500px;
+      animation-delay: 1s;
+    }
+
+    #alert-box {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      backdrop-filter: blur(8px);
+    }
+
+    .alert-content {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 50px 40px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alert-content h2 {
+      margin-top: 0;
+      font-size: 32px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .alert-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+    }
+
+    .alert-button {
+      margin-top: 20px;
+      padding: 16px 32px;
+      font-size: 18px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      white-space: nowrap; /* ทำให้ข้อความอยู่บรรทัดเดียว */
+      display: inline-flex; /* เปลี่ยนเป็น inline-flex เพื่อจัดการกับเนื้อหาภายใน */
+      align-items: center; /* จัดให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
+      justify-content: center; /* จัดให้เนื้อหาอยู่กึ่งกลางแนวนอน */
+      width: 250px; /* กำหนดความกว้างให้เหมาะสม */
+      text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+    }
+
+    .alert-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    }
+
+    .success-checkmark {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #38bdf8, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    .tech-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .tech-item {
+      position: absolute;
+      opacity: 0.6;
+    }
+
+    .tech-monitor {
+      top: 10%;
+      left: 10%;
+      width: 200px;
+      height: 150px;
+      border: 3px solid #38bdf8;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .tech-monitor::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 30px;
+      background-color: #38bdf8;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .tech-keyboard {
+      bottom: 15%;
+      left: 15%;
+      width: 300px;
+      height: 80px;
+      border: 2px solid #38bdf8;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .tech-mouse {
+      bottom: 25%;
+      left: 35%;
+      width: 40px;
+      height: 70px;
+      border: 2px solid #38bdf8;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .tech-ram {
+      top: 40%;
+      right: 15%;
+      width: 150px;
+      height: 40px;
+      border: 2px solid #38bdf8;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .tech-cpu {
+      top: 20%;
+      right: 25%;
+      width: 80px;
+      height: 80px;
+      border: 2px solid #38bdf8;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .tech-circuit {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      opacity: 0.1;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='%2338bdf8' stroke-width='1'/%3E%3Cpath d='M30 10v80M50 10v80M70 10v80M10 30h80M10 50h80M10 70h80' stroke='%2338bdf8' stroke-width='0.5'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='10' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='50' cy='10' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='70' cy='10' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='90' cy='10' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='10' cy='30' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='50' cy='30' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='70' cy='30' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='90' cy='30' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='10' cy='50' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='50' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='50' cy='50' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='70' cy='50' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='90' cy='50' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='10' cy='70' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='70' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='50' cy='70' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='70' cy='70' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='90' cy='70' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='10' cy='90' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='90' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='50' cy='90' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='70' cy='90' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='90' cy='90' r='2' fill='%2338bdf8'/%3E%3C/svg%3E");
+    }
+
+    .form-highlight {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: radial-gradient(circle at var(--x) var(--y), rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0) 50%);
+    }
+
+    .input-group:hover .form-highlight {
+      opacity: 1;
+    }
+
+    /* กล่องแจ้งเตือนการเชื่อมต่อล้มเหลว */
+    #connection-error {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      backdrop-filter: blur(8px);
+    }
+
+    .error-content {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 40px 30px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .error-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ef4444, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    .error-content h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #ef4444;
+      margin-bottom: 15px;
+    }
+
+    .error-content p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .error-button {
+      margin-top: 15px;
+      padding: 14px 28px;
+      font-size: 16px;
+      background: linear-gradient(90deg, #ef4444, #f97316);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .error-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+    }
+
+    @media (max-width: 1200px) {
+      .tech-decoration {
+        display: none;
+      }
+      
+      body {
+        justify-content: center;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        width: 90%;
+        padding: 25px 20px;
+      }
+      
+      #clock-container {
+        top: 20px;
+        left: 20px;
+        padding: 15px;
+      }
+      
+      .form-container h2 {
+        font-size: 28px;
+      }
+      
+      .form-container p {
+        font-size: 16px;
+      }
+
+      select,
+      input[type="text"] {
+        height: 50px;
+        font-size: 16px;
+      }
+
+      button {
+        height: 60px;
+        font-size: 24px;
+      }
+      
+      label {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tech-circuit"></div>
+  <div class="tech-background">
+    <div class="tech-item tech-monitor"></div>
+    <div class="tech-item tech-keyboard"></div>
+    <div class="tech-item tech-mouse"></div>
+    <div class="tech-item tech-ram"></div>
+    <div class="tech-item tech-cpu"></div>
+  </div>
+  
+  <div class="tech-particles" id="particles"></div>
+  
+  <div class="tech-decoration">
+    <div class="tech-circle"></div>
+    <div class="tech-circle"></div>
+    <div class="tech-circle"></div>
+    <svg width="100%" height="100%" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.3">
+        <circle cx="400" cy="400" r="300" fill="none" stroke="#38bdf8" stroke-width="2" />
+        <circle cx="400" cy="400" r="250" fill="none" stroke="#38bdf8" stroke-width="2" />
+        <circle cx="400" cy="400" r="200" fill="none" stroke="#38bdf8" stroke-width="1" />
+        <circle cx="400" cy="400" r="150" fill="none" stroke="#38bdf8" stroke-width="1" />
+        <circle cx="400" cy="400" r="100" fill="none" stroke="#38bdf8" stroke-width="1" />
+        <line x1="100" y1="400" x2="700" y2="400" stroke="#38bdf8" stroke-width="1" />
+        <line x1="400" y1="100" x2="400" y2="700" stroke="#38bdf8" stroke-width="1" />
+        <line x1="170" y1="170" x2="630" y2="630" stroke="#38bdf8" stroke-width="1" />
+        <line x1="630" y1="170" x2="170" y2="630" stroke="#38bdf8" stroke-width="1" />
+      </g>
+      <g opacity="0.7">
+        <circle cx="400" cy="400" r="50" fill="#38bdf8" opacity="0.2">
+          <animate attributeName="r" values="50;70;50" dur="5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="400" cy="400" r="40" fill="#38bdf8" opacity="0.3">
+          <animate attributeName="r" values="40;60;40" dur="4s" repeatCount="indefinite" />
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <div id="clock-container">
+    <div id="clock-label">ขณะนี้เวลา</div>
+    <div id="clock"></div>
+  </div>
+
+  <form class="form-container" id="loginForm" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSd0dNWuROW_Le4BfRSzWOkKElLTiEFdndvuUAVBb6CLwPeP_Q/formResponse" onsubmit="submitForm(event)">
+    <div class="form-header">
+      <h2>ยินดีต้อนรับสู่ห้องคอมพิวเตอร์</h2>
+      <p>โรงเรียนบ้านหนองไผ่ใหญ่ สพป.นครราชสีมา เขต 3</p>
+    </div>
+
+    <div class="input-group">
+      <label for="prefix">คำนำหน้า</label>
+      <div class="relative">
+        <select name="entry.1226252401" required id="prefix">
+          <option value="" disabled selected>เลือกคำนำหน้า</option>
+          <option value="เด็กชาย">เด็กชาย</option>
+          <option value="เด็กหญิง">เด็กหญิง</option>
+          <option value="นาง">นาง</option>
+          <option value="นางสาว">นางสาว</option>
+          <option value="นาย">นาย</option>
+        </select>
+        <div class="form-highlight"></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="fullname">ชื่อ-นามสกุล</label>
+      <div class="relative">
+        <input type="text" name="entry.1405412445" id="fullname" placeholder="กรอกชื่อ-นามสกุล" required>
+        <div class="form-highlight"></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="grade">ระดับชั้น</label>
+      <div class="relative">
+        <select name="entry.193315918" required id="grade">
+          <option value="" disabled selected>เลือกระดับชั้น</option>
+          <option value="ป.1">ป.1</option>
+          <option value="ป.2">ป.2</option>
+          <option value="ป.3">ป.3</option>
+          <option value="ป.4">ป.4</option>
+          <option value="ป.5">ป.5</option>
+          <option value="ป.6">ป.6</option>
+        </select>
+        <div class="form-highlight"></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="subject">วิชาที่เรียน</label>
+      <div class="relative">
+        <select name="entry.994538917" required id="subject">
+          <option value="" disabled selected>เลือกวิชาที่เรียน</option>
+          <option value="ภาษาไทย">ภาษาไทย</option>
+          <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+          <option value="วิทยาศาสตร์และเทคโนโลยี">วิทยาศาสตร์และเทคโนโลยี</option>
+          <option value="สังคมศึกษา">สังคมศึกษา</option>
+          <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
+          <option value="สุขศึกษาและพลศึกษา">สุขศึกษาและพลศึกษา</option>
+          <option value="ศิลปะ">ศิลปะ</option>
+          <option value="การงานอาชีพ">การงานอาชีพ</option>
+          <option value="ภาษาต่างประเทศ">ภาษาต่างประเทศ</option>
+          <option value="หน้าที่พลเมือง">หน้าที่พลเมือง</option>
+          <option value="คอมพิวเตอร์">คอมพิวเตอร์</option>
+          <option value="การป้องกันการทุจริต">การป้องกันการทุจริต</option>
+          <option value="ชุมนุมคอมพิวเตอร์สร้างสรรค์">ชุมนุมคอมพิวเตอร์สร้างสรรค์</option>
+          <option value="แนะแนว">แนะแนว</option>
+          <option value="ลดเวลาเรียนเพิ่มเวลารู้">ลดเวลาเรียนเพิ่มเวลารู้</option>
+        </select>
+        <div class="form-highlight"></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="computer">ใช้งานเครื่องที่</label>
+      <div class="relative">
+        <select name="entry.1056822339" required id="computer">
+          <option value="" disabled selected>เลือกเครื่องที่ใช้งาน</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <div class="form-highlight"></div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" id="submitBtn">
+        <span>ลงทะเบียน</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="footer-credit">
+    นายเอกสกุล โลไธสง ตำแหน่ง ครู คศ.1 (ผู้ดูแลระบบ)
+  </div>
+
+<!-- กล่องแจ้งเตือนสำเร็จ -->
+<div id="alert-box">
+  <div class="alert-content">
+    <div class="success-checkmark">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>ลงทะเบียนเรียบร้อยแล้ว</h2>
+    <p>ระบบได้บันทึกข้อมูลการเข้าใช้งานของคุณแล้ว</p>
+    <button onclick="goToComputer()" class="alert-button">เข้าใช้งานคอมพิวเตอร์</button>
+  </div>
+</div>
+
+<script>
+function goToComputer() {
+  // เปิดลิงก์ในแท็บใหม่
+  window.open("https://www.google.com", "_blank");
+  // ปิดแท็บปัจจุบัน
+  window.close();
+}
+</script>
+
+  <script>
+    // Create floating tech particles
+    function createParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = 25;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size between 5px and 15px
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // Random animation duration between 15s and 30s
+        const duration = Math.random() * 15 + 15;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // Random delay
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(particle);
+      }
+    }
+
+    // Create tech background elements
+    function createTechBackground() {
+      // Add circuit lines
+      const techItems = document.querySelectorAll('.tech-item');
+      
+      techItems.forEach(item => {
+        // Add animation
+        item.style.animation = `pulse ${3 + Math.random() * 3}s infinite ease-in-out`;
+        item.style.animationDelay = `${Math.random() * 2}s`;
+      });
+      
+      // Add more tech elements dynamically
+      const techBackground = document.querySelector('.tech-background');
+      
+      // Add motherboard
+      const motherboard = document.createElement('div');
+      motherboard.classList.add('tech-item');
+      motherboard.style.position = 'absolute';
+      motherboard.style.top = '50%';
+      motherboard.style.left = '50%';
+      motherboard.style.transform = 'translate(-50%, -50%)';
+      motherboard.style.width = '300px';
+      motherboard.style.height = '400px';
+      motherboard.style.border = '2px solid #38bdf8';
+      motherboard.style.borderRadius = '10px';
+      motherboard.style.boxShadow = '0 0 15px rgba(56, 189, 248, 0.5)';
+      motherboard.style.opacity = '0.3';
+      techBackground.appendChild(motherboard);
+      
+      // Add circuit lines inside motherboard
+      for (let i = 0; i < 10; i++) {
+        const line = document.createElement('div');
+        line.style.position = 'absolute';
+        line.style.backgroundColor = '#38bdf8';
+        line.style.height = '2px';
+        line.style.width = `${Math.random() * 100 + 50}px`;
+        line.style.top = `${Math.random() * 380 + 10}px`;
+        line.style.left = `${Math.random() * 250 + 25}px`;
+        motherboard.appendChild(line);
+        
+        const vline = document.createElement('div');
+        vline.style.position = 'absolute';
+        vline.style.backgroundColor = '#38bdf8';
+        vline.style.width = '2px';
+        vline.style.height = `${Math.random() * 100 + 50}px`;
+        vline.style.top = `${Math.random() * 300 + 50}px`;
+        vline.style.left = `${Math.random() * 280 + 10}px`;
+        motherboard.appendChild(vline);
+      }
+      
+      // Add chips to motherboard
+      for (let i = 0; i < 5; i++) {
+        const chip = document.createElement('div');
+        chip.style.position = 'absolute';
+        chip.style.backgroundColor = 'rgba(56, 189, 248, 0.2)';
+        chip.style.border = '1px solid #38bdf8';
+        chip.style.width = `${Math.random() * 30 + 20}px`;
+        chip.style.height = `${Math.random() * 30 + 20}px`;
+        chip.style.top = `${Math.random() * 350 + 25}px`;
+        chip.style.left = `${Math.random() * 250 + 25}px`;
+        motherboard.appendChild(chip);
+      }
+    }
+
+    // Form submission
+    function submitForm(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.innerHTML = '<span>กำลังส่ง...</span>';
+
+      // Add loading animation to button
+      btn.classList.add('loading');
+
+      // สร้าง FormData ส่งข้อมูลแบบ POST
+      const formData = new FormData(form);
+
+      // Simulate loading for better UX (remove in production)
+      setTimeout(() => {
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // ต้องใช้แบบนี้กับ Google Forms
+        }).then(() => {
+          // ซ่อนฟอร์ม
+          document.getElementById("loginForm").style.display = "none";
+
+          // แสดงกล่องแจ้งเตือน
+          document.getElementById("alert-box").style.display = "flex";
+        }).catch((error) => {
+          alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
+          console.error('Error:', error);
+          btn.disabled = false;
+          btn.innerHTML = '<span>ลงทะเบียน</span>';
+          btn.classList.remove('loading');
+        });
+      }, 1000);
+    }
+
+    // Update clock
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      // Add leading zeros if needed
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+
+      document.getElementById('clock').textContent = timeString;
+    }
+
+    // Add interactive highlight effect to form fields
+    function addFormHighlightEffect() {
+      const inputGroups = document.querySelectorAll('.input-group');
+      
+      inputGroups.forEach(group => {
+        const highlight = group.querySelector('.form-highlight');
+        
+        group.addEventListener('mousemove', (e) => {
+          const rect = group.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          highlight.style.setProperty('--x', x + 'px');
+          highlight.style.setProperty('--y', y + 'px');
+        });
+      });
+    }
+
+    // Add floating tech elements
+    function addFloatingTechElements() {
+      const techItems = [
+        // Computer icons SVG data
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M8 21H16" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 17V21" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="12" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="8" y="16" width="8" height="4" stroke="#38bdf8" stroke-width="2"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="2" width="16" height="20" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="4" y1="18" x2="20" y2="18" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="20" r="1" fill="#38bdf8"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="12" rx="1" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M6 10H18" stroke="#38bdf8" stroke-width="1"/>
+          <path d="M6 14H18" stroke="#38bdf8" stroke-width="1"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="12" r="1" fill="#38bdf8"/>
+        </svg>`
+      ];
+      
+      const container = document.createElement('div');
+      container.style.position = 'absolute';
+      container.style.top = '0';
+      container.style.left = '0';
+      container.style.width = '100%';
+      container.style.height = '100%';
+      container.style.pointerEvents = 'none';
+      container.style.zIndex = '2';
+      document.body.appendChild(container);
+      
+      for (let i = 0; i < 8; i++) {
+        const tech = document.createElement('div');
+        tech.style.position = 'absolute';
+        tech.style.opacity = '0.2';
+        tech.innerHTML = techItems[Math.floor(Math.random() * techItems.length)];
+        
+        // Random position
+        tech.style.left = `${Math.random() * 100}%`;
+        tech.style.top = `${Math.random() * 100}%`;
+        
+        // Animation
+        tech.style.animation = `float ${20 + Math.random() * 20}s infinite linear`;
+        tech.style.animationDelay = `${Math.random() * 10}s`;
+        
+        container.appendChild(tech);
+      }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      createTechBackground();
+      updateClock();
+      setInterval(updateClock, 1000);
+      addFormHighlightEffect();
+      addFloatingTechElements();
+      
+      // Subtle entrance animation for form
+      setTimeout(() => {
+        document.querySelector('.form-container').style.opacity = '1';
+        document.querySelector('.form-container').style.transform = 'translateY(0)';
+      }, 300);
+      
+      // Add focus and blur events for input fields
+      const inputElements = document.querySelectorAll('input, select');
+      inputElements.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.parentElement.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+          input.parentElement.parentElement.classList.remove('focused');
+        });
+      });
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'939e591f24c874d4',t:'MTc0NjI2MDUyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
