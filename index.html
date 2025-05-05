@@ -12,18 +12,18 @@
       box-sizing: border-box;
       font-family: 'Kanit', sans-serif;
     }
-
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #0f172a, #1e293b);
       background-size: cover;
       background-position: center;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: relative;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     body::before {
@@ -35,16 +35,6 @@
       height: 100%;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       z-index: 0;
-    }
-
-    .main-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      padding: 40px 0;
     }
 
     .tech-particles {
@@ -95,8 +85,9 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
       z-index: 10;
+      max-height: 90vh;
+      overflow-y: auto;
       transition: all 0.5s ease;
-      overflow: visible;
     }
 
     .form-container:hover {
@@ -131,19 +122,33 @@
       color: #94a3b8;
     }
 
-    .footer {
-      width: 100%;
-      padding: 20px;
-      color: #94a3b8;
+    .footer-credit {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 16px;
+      color: white;
       font-size: 14px;
       text-align: center;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      z-index: 100;
-      position: relative;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+                  0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      width: auto;
+      max-width: 90%;
     }
 
+    .footer-credit:hover {
+      background: rgba(15, 23, 42, 0.9);
+      transform: translateX(-50%) translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    
     label {
       display: block;
       margin-bottom: 6px;
@@ -210,13 +215,13 @@
     }
 
     button {
-      width: 250px;
+      width: 200px;
       height: 60px;
       border: none;
       border-radius: 16px;
       background: linear-gradient(90deg, #38bdf8, #818cf8);
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.4s ease;
@@ -259,13 +264,18 @@
       transform: none;
     }
 
+    /* ปรับแต่งส่วนของนาฬิกาและวันที่ */
     #datetime-container {
-      text-align: center;
-      margin-bottom: 20px;
-      width: 100%;
       position: absolute;
-      top: -100px; /* ขยับขึ้นจาก -80px เป็น -100px */
+      top: -80px;
       left: 0;
+      width: 100%;
+      color: white;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
     }
 
     #clock {
@@ -280,6 +290,7 @@
     #date {
       font-size: 18px;
       color: #94a3b8;
+      margin-top: 5px;
     }
 
     .tech-decoration {
@@ -294,7 +305,7 @@
       align-items: center;
       justify-content: center;
     }
-
+    
     .tech-circle {
       position: absolute;
       border-radius: 50%;
@@ -324,6 +335,98 @@
       width: 500px;
       height: 500px;
       animation-delay: 1s;
+    }
+
+    #alert-box {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      backdrop-filter: blur(8px);
+    }
+
+    .alert-content {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 50px 40px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alert-content h2 {
+      margin-top: 0;
+      font-size: 32px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .alert-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+    }
+
+    .alert-button {
+      margin-top: 20px;
+      padding: 16px 32px;
+      font-size: 18px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      text-decoration: none;
+    }
+
+    .alert-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    }
+
+    .success-checkmark {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #38bdf8, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
     }
 
     .tech-background {
@@ -432,8 +535,8 @@
       opacity: 1;
     }
 
-    /* กล่องแจ้งเตือน */
-    #alert-box {
+    /* กล่องแจ้งเตือนการเชื่อมต่อล้มเหลว */
+    #connection-error {
       display: none;
       position: fixed;
       top: 0;
@@ -447,7 +550,7 @@
       backdrop-filter: blur(8px);
     }
 
-    .alert-content {
+    .error-content {
       background: rgba(15, 23, 42, 0.9);
       padding: 40px 30px;
       border-radius: 24px;
@@ -461,139 +564,70 @@
       animation: fadeInUp 0.5s ease-out;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .error-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ef4444, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+      animation: scaleIn 0.5s ease-out;
     }
 
-    .alert-content h2 {
+    .error-content h2 {
       margin-top: 0;
-      font-size: 32px;
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
+      font-size: 28px;
+      color: #ef4444;
+      margin-bottom: 15px;
     }
 
-    .alert-button {
-      margin-top: 20px;
-      padding: 16px 32px;
-      font-size: 18px;
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
+    .error-content p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .error-button {
+      margin-top: 15px;
+      padding: 14px 28px;
+      font-size: 16px;
+      background: linear-gradient(90deg, #ef4444, #f97316);
       color: white;
       border: none;
       border-radius: 16px;
       cursor: pointer;
       font-weight: 500;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-      width: 250px;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
     }
 
-    .alert-button:hover {
+    .error-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
-      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
     }
 
-    .success-checkmark {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #38bdf8, #818cf8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
-      animation: scaleIn 0.5s ease-out;
-    }
-
-    @keyframes scaleIn {
-      from { transform: scale(0); }
-      to { transform: scale(1); }
-    }
-
-    /* กล่องแจ้งเตือนแบบเล็ก */
-    #notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(15, 23, 42, 0.9);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      z-index: 9999;
-      transform: translateX(150%);
-      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #notification.show {
-      transform: translateX(0);
-    }
-
-    .notification-content {
-      display: flex;
-      align-items: center;
-    }
-
-    .notification-icon {
-      margin-right: 15px;
-      width: 30px;
-      height: 30px;
-      background: linear-gradient(45deg, #38bdf8, #818cf8);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .notification-text {
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .form-wrapper {
-      position: relative;
-      margin-top: 120px; /* เพิ่มระยะห่างด้านบนเพื่อให้มีพื้นที่สำหรับวันที่และเวลา */
-    }
-
-    /* สไตล์สำหรับ loading spinner */
-    .loading-spinner {
-      display: none;
-      width: 40px;
-      height: 40px;
-      margin: 0 auto;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top: 4px solid #38bdf8;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @media (max-width: 1200px) {
+      .tech-decoration {
+        display: none;
+      }
+      
+      body {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 768px) {
       .form-container {
         width: 90%;
-        padding: 20px;
+        padding: 25px 20px;
       }
       
       #datetime-container {
-        top: -90px; /* ปรับตำแหน่งสำหรับมือถือ */
-      }
-      
-      #clock {
-        font-size: 28px;
-      }
-      
-      #date {
-        font-size: 14px;
+        margin-bottom: 20px;
       }
       
       .form-container h2 {
@@ -606,26 +640,25 @@
 
       select,
       input[type="text"] {
-        height: 45px;
+        height: 50px;
         font-size: 16px;
       }
 
       button {
-        height: 55px;
-        font-size: 22px;
+        height: 60px;
+        font-size: 24px;
       }
       
       label {
         font-size: 18px;
       }
       
-      .footer {
-        font-size: 12px;
-        padding: 15px;
+      #clock {
+        font-size: 28px;
       }
       
-      .form-wrapper {
-        margin-top: 100px;
+      #date {
+        font-size: 14px;
       }
     }
   </style>
@@ -670,200 +703,158 @@
     </svg>
   </div>
 
-  <div class="main-content">
-    <div class="form-wrapper">
-      <div id="datetime-container">
-        <div id="clock"></div>
-        <div id="date"></div>
-      </div>
-      
-      <form class="form-container" id="loginForm">
-        <div class="form-header">
-          <h2>ยินดีต้อนรับสู่ห้องคอมพิวเตอร์</h2>
-          <p>โรงเรียนบ้านหนองไผ่ใหญ่ สพป.นครราชสีมา เขต 3</p>
-        </div>
-
-        <div class="input-group">
-          <label for="prefix">คำนำหน้า</label>
-          <div class="relative">
-            <select name="entry.1226252401" required id="prefix">
-              <option value="" disabled selected>เลือกคำนำหน้า</option>
-              <option value="เด็กชาย">เด็กชาย</option>
-              <option value="เด็กหญิง">เด็กหญิง</option>
-              <option value="นาง">นาง</option>
-              <option value="นางสาว">นางสาว</option>
-              <option value="นาย">นาย</option>
-            </select>
-            <div class="form-highlight"></div>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="fullname">ชื่อ-นามสกุล</label>
-          <div class="relative">
-            <input type="text" name="entry.1405412445" id="fullname" placeholder="กรอกชื่อ-นามสกุล" required>
-            <div class="form-highlight"></div>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="grade">ระดับชั้น</label>
-          <div class="relative">
-            <select name="entry.193315918" required id="grade">
-              <option value="" disabled selected>เลือกระดับชั้น</option>
-              <option value="ป.1">ป.1</option>
-              <option value="ป.2">ป.2</option>
-              <option value="ป.3">ป.3</option>
-              <option value="ป.4">ป.4</option>
-              <option value="ป.5">ป.5</option>
-              <option value="ป.6">ป.6</option>
-            </select>
-            <div class="form-highlight"></div>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="subject">วิชาที่เรียน</label>
-          <div class="relative">
-            <select name="entry.994538917" required id="subject">
-              <option value="" disabled selected>เลือกวิชาที่เรียน</option>
-              <option value="ภาษาไทย">ภาษาไทย</option>
-              <option value="คณิตศาสตร์">คณิตศาสตร์</option>
-              <option value="วิทยาศาสตร์และเทคโนโลยี">วิทยาศาสตร์และเทคโนโลยี</option>
-              <option value="สังคมศึกษา">สังคมศึกษา</option>
-              <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
-              <option value="สุขศึกษาและพลศึกษา">สุขศึกษาและพลศึกษา</option>
-              <option value="ศิลปะ">ศิลปะ</option>
-              <option value="การงานอาชีพ">การงานอาชีพ</option>
-              <option value="ภาษาต่างประเทศ">ภาษาต่างประเทศ</option>
-              <option value="หน้าที่พลเมือง">หน้าที่พลเมือง</option>
-              <option value="คอมพิวเตอร์">คอมพิวเตอร์</option>
-              <option value="การป้องกันการทุจริต">การป้องกันการทุจริต</option>
-              <option value="ชุมนุมคอมพิวเตอร์สร้างสรรค์">ชุมนุมคอมพิวเตอร์สร้างสรรค์</option>
-              <option value="แนะแนว">แนะแนว</option>
-              <option value="ลดเวลาเรียนเพิ่มเวลารู้">ลดเวลาเรียนเพิ่มเวลารู้</option>
-            </select>
-            <div class="form-highlight"></div>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="computer">ใช้งานเครื่องที่</label>
-          <div class="relative">
-            <select name="entry.1056822339" required id="computer">
-              <option value="" disabled selected>เลือกเครื่องที่ใช้งาน</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-            </select>
-            <div class="form-highlight"></div>
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button type="button" id="submitBtn" onclick="submitForm()">
-            <span>ลงทะเบียน</span>
-          </button>
-        </div>
-        
-        <div class="loading-spinner" id="loading-spinner"></div>
-      </form>
-    </div>
+  <div id="datetime-container">
+    <div id="clock"></div>
+    <div id="date"></div>
   </div>
 
-  <!-- กล่องแจ้งเตือน -->
+  <div class="form-container" id="formContainer">
+    <!-- ส่วนที่ปรับปรุง: ใช้ XMLHttpRequest แทนการใช้ iframe -->
+    <form id="loginForm" onsubmit="return submitForm(event)">
+      <div class="form-header">
+        <h2>ยินดีต้อนรับสู่ห้องคอมพิวเตอร์</h2>
+        <p>โรงเรียนบ้านหนองไผ่ใหญ่ สพป.นครราชสีมา เขต 3</p>
+      </div>
+
+      <div class="input-group">
+        <label for="prefix">คำนำหน้า</label>
+        <div class="relative">
+          <select name="entry.1226252401" required id="prefix">
+            <option value="" disabled selected>เลือกคำนำหน้า</option>
+            <option value="เด็กชาย">เด็กชาย</option>
+            <option value="เด็กหญิง">เด็กหญิง</option>
+            <option value="นาง">นาง</option>
+            <option value="นางสาว">นางสาว</option>
+            <option value="นาย">นาย</option>
+          </select>
+          <div class="form-highlight"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="fullname">ชื่อ-นามสกุล</label>
+        <div class="relative">
+          <input type="text" name="entry.1405412445" id="fullname" placeholder="กรอกชื่อ-นามสกุล" required>
+          <div class="form-highlight"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="grade">ระดับชั้น</label>
+        <div class="relative">
+          <select name="entry.193315918" required id="grade">
+            <option value="" disabled selected>เลือกระดับชั้น</option>
+            <option value="ป.1">ป.1</option>
+            <option value="ป.2">ป.2</option>
+            <option value="ป.3">ป.3</option>
+            <option value="ป.4">ป.4</option>
+            <option value="ป.5">ป.5</option>
+            <option value="ป.6">ป.6</option>
+          </select>
+          <div class="form-highlight"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="subject">วิชาที่เรียน</label>
+        <div class="relative">
+          <select name="entry.994538917" required id="subject">
+            <option value="" disabled selected>เลือกวิชาที่เรียน</option>
+            <option value="ภาษาไทย">ภาษาไทย</option>
+            <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+            <option value="วิทยาศาสตร์และเทคโนโลยี">วิทยาศาสตร์และเทคโนโลยี</option>
+            <option value="สังคมศึกษา">สังคมศึกษา</option>
+            <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
+            <option value="สุขศึกษาและพลศึกษา">สุขศึกษาและพลศึกษา</option>
+            <option value="ศิลปะ">ศิลปะ</option>
+            <option value="การงานอาชีพ">การงานอาชีพ</option>
+            <option value="ภาษาต่างประเทศ">ภาษาต่างประเทศ</option>
+            <option value="หน้าที่พลเมือง">หน้าที่พลเมือง</option>
+            <option value="คอมพิวเตอร์">คอมพิวเตอร์</option>
+            <option value="การป้องกันการทุจริต">การป้องกันการทุจริต</option>
+            <option value="ชุมนุมคอมพิวเตอร์สร้างสรรค์">ชุมนุมคอมพิวเตอร์สร้างสรรค์</option>
+            <option value="แนะแนว">แนะแนว</option>
+            <option value="ลดเวลาเรียนเพิ่มเวลารู้">ลดเวลาเรียนเพิ่มเวลารู้</option>
+            <option value="ลูกเสือ-เนตรนารี">ลูกเสือ-เนตรนารี</option>
+          </select>
+          <div class="form-highlight"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="computer">ใช้งานเครื่องที่</label>
+        <div class="relative">
+          <select name="entry.1056822339" required id="computer">
+            <option value="" disabled selected>เลือกเครื่องที่ใช้งาน</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <div class="form-highlight"></div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" id="submitBtn">
+          <span>ลงทะเบียน</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer-credit">
+    © 2025 ระบบบันทึกการเข้าใช้งานห้องปฏิบัติการคอมพิวเตอร์ พัฒนาโดย นายเอกสกุล โลไธสง ตำแหน่ง ครู คศ.1
+  </div>
+
+  <!-- กล่องแจ้งเตือนสำเร็จ -->
   <div id="alert-box">
     <div class="alert-content">
       <div class="success-checkmark">
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 13L9 17L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
       <h2>ลงทะเบียนเรียบร้อยแล้ว</h2>
       <p>ระบบได้บันทึกข้อมูลการเข้าใช้งานของคุณแล้ว</p>
-      <button class="alert-button" onclick="goToGoogle()">เข้าใช้งานคอมพิวเตอร์</button>
+      <button onclick="goToComputer()" class="alert-button">เข้าใช้งานคอมพิวเตอร์</button>
     </div>
   </div>
 
-  <!-- กล่องแจ้งเตือนแบบเล็ก -->
-  <div id="notification">
-    <div class="notification-content">
-      <div class="notification-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 13L9 17L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- กล่องแจ้งเตือนข้อผิดพลาด -->
+  <div id="connection-error">
+    <div class="error-content">
+      <div class="error-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 8v5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="16" r="1" fill="white"/>
+          <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" fill="none"/>
         </svg>
       </div>
-      <div class="notification-text">ลงทะเบียนเรียบร้อยแล้ว</div>
+      <h2>เกิดข้อผิดพลาด</h2>
+      <p>ไม่สามารถเชื่อมต่อกับระบบได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง</p>
+      <button onclick="closeErrorBox()" class="error-button">ลองใหม่</button>
     </div>
-  </div>
-
-  <div class="footer">
-    <p>© 2025 ระบบบันทึกการเข้าใช้งานห้องปฏิบัติการคอมพิวเตอร์ พัฒนาโดย นายเอกสกุล โลไธสง ตำแหน่ง ครู คศ.1</p>
   </div>
 
   <script>
-    // Create floating tech particles
-    function createParticles() {
-      const container = document.getElementById('particles');
-      const particleCount = 25;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random size between 5px and 15px
-        const size = Math.random() * 10 + 5;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        
-        // Random position
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        
-        // Random animation duration between 15s and 30s
-        const duration = Math.random() * 15 + 15;
-        particle.style.animationDuration = `${duration}s`;
-        
-        // Random delay
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        
-        container.appendChild(particle);
-      }
+    // ฟังก์ชันสำหรับเปิดเว็บไซต์ Google หลังจากลงทะเบียนเสร็จ
+    function goToComputer() {
+      // รีเฟรชหน้าเว็บ
+      window.location.reload();
     }
-
-    // Create tech background elements
-    function createTechBackground() {
-      // Add circuit lines
-      const techItems = document.querySelectorAll('.tech-item');
-      
-      techItems.forEach(item => {
-        // Add animation
-        item.style.animation = `pulse ${3 + Math.random() * 3}s infinite ease-in-out`;
-        item.style.animationDelay = `${Math.random() * 2}s`;
-      });
-    }
-
-    // Update clock and date
-    function updateDateTime() {
+    
+    // ฟังก์ชันสำหรับแสดงวันที่ภาษาไทย
+    function getThaiDate() {
       const now = new Date();
-      
-      // Format time: HH:MM:SS
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const timeString = `${hours}:${minutes}:${seconds}`;
-      
-      // Format date in Thai with specific format: วันจันทร์ ที่ 5 เดือน พฤษภาคม พ.ศ. 2568
       const thaiDays = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
       const thaiMonths = [
         'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
@@ -873,17 +864,244 @@
       const day = thaiDays[now.getDay()];
       const date = now.getDate();
       const month = thaiMonths[now.getMonth()];
-      const year = now.getFullYear() + 543; // Convert to Buddhist Era
+      const year = now.getFullYear() + 543; // แปลงเป็น พ.ศ.
       
-      const dateString = `วัน${day} ที่ ${date} เดือน ${month} พ.ศ. ${year}`;
-      
-      // Update DOM
-      document.getElementById('clock').textContent = timeString;
-      document.getElementById('date').textContent = dateString;
+      return `วัน${day} ที่ ${date} เดือน ${month} พ.ศ. ${year}`;
     }
 
-    // Form highlight effect
-    function setupFormHighlight() {
+    // ฟังก์ชันสำหรับส่งข้อมูลไปยัง Google Forms
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('loginForm');
+      const btn = document.getElementById('submitBtn');
+      
+      // ตรวจสอบความถูกต้องของฟอร์ม
+      if (!form.checkValidity()) {
+        return false;
+      }
+      
+      // ปิดปุ่มและแสดงสถานะกำลังส่ง
+      btn.disabled = true;
+      btn.innerHTML = '<span>กำลังส่ง...</span>';
+      
+      // รวบรวมข้อมูลจากฟอร์ม
+      const formData = new FormData(form);
+      
+      // URL ของ Google Form
+      const scriptURL = 'https://docs.google.com/forms/d/e/1FAIpQLSd0dNWuROW_Le4BfRSzWOkKElLTiEFdndvuUAVBb6CLwPeP_Q/formResponse';
+      
+      // สร้าง URL parameters จาก form data
+      const urlParams = new URLSearchParams();
+      for (const pair of formData) {
+        urlParams.append(pair[0], pair[1]);
+      }
+      
+      // ใช้ fetch API ส่งข้อมูลไปยัง Google Forms
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // สำคัญมาก! ต้องใช้ no-cors เพื่อส่งข้อมูลข้าม domain
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: urlParams.toString()
+      })
+      .then(response => {
+        // แสดงกล่องแจ้งเตือนสำเร็จ
+        document.getElementById("alert-box").style.display = "flex";
+      })
+      .catch(error => {
+        // ถ้าเกิดข้อผิดพลาด ให้ลองใช้วิธี XMLHttpRequest แทน
+        sendWithXHR(urlParams.toString());
+      });
+      
+      return false;
+    }
+    
+    // ส่งข้อมูลด้วย XMLHttpRequest (วิธีสำรอง)
+    function sendWithXHR(data) {
+      const xhr = new XMLHttpRequest();
+      const scriptURL = 'https://docs.google.com/forms/d/e/1FAIpQLSd0dNWuROW_Le4BfRSzWOkKElLTiEFdndvuUAVBb6CLwPeP_Q/formResponse';
+      
+      xhr.open('POST', scriptURL, true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      
+      xhr.onload = function() {
+        // แสดงกล่องแจ้งเตือนสำเร็จ
+        document.getElementById("alert-box").style.display = "flex";
+      };
+      
+      xhr.onerror = function() {
+        // ถ้าเกิดข้อผิดพลาด ให้ลองใช้วิธีสุดท้าย - iframe
+        sendWithIframe();
+      };
+      
+      xhr.send(data);
+    }
+    
+    // ส่งข้อมูลด้วย iframe (วิธีสุดท้าย)
+    function sendWithIframe() {
+      const form = document.getElementById('loginForm');
+      const formData = new FormData(form);
+      
+      // สร้าง iframe ชั่วคราว
+      const iframe = document.createElement('iframe');
+      iframe.name = 'hidden_iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      
+      // สร้างฟอร์มใหม่
+      const tempForm = document.createElement('form');
+      tempForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLSd0dNWuROW_Le4BfRSzWOkKElLTiEFdndvuUAVBb6CLwPeP_Q/formResponse';
+      tempForm.method = 'POST';
+      tempForm.target = 'hidden_iframe';
+      
+      // เพิ่มข้อมูลจากฟอร์มเดิม
+      for (const pair of formData) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = pair[0];
+        input.value = pair[1];
+        tempForm.appendChild(input);
+      }
+      
+      // เพิ่มฟอร์มไปยังเอกสาร
+      document.body.appendChild(tempForm);
+      
+      // ส่งฟอร์ม
+      tempForm.submit();
+      
+      // แสดงกล่องแจ้งเตือนสำเร็จ
+      setTimeout(function() {
+        document.getElementById("alert-box").style.display = "flex";
+      }, 1000);
+      
+      // ลบฟอร์มชั่วคราว
+      setTimeout(function() {
+        document.body.removeChild(tempForm);
+        document.body.removeChild(iframe);
+      }, 2000);
+    }
+
+    // ปิดกล่องแจ้งเตือนข้อผิดพลาด
+    function closeErrorBox() {
+      document.getElementById("connection-error").style.display = "none";
+    }
+
+    // สร้างอนุภาคเทคโนโลยีลอยตัว
+    function createParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = 25;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // สุ่มขนาดระหว่าง 5px และ 15px
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // สุ่มตำแหน่ง
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // สุ่มระยะเวลาแอนิเมชันระหว่าง 15s และ 30s
+        const duration = Math.random() * 15 + 15;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // สุ่มการหน่วงเวลา
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(particle);
+      }
+    }
+
+    // สร้างองค์ประกอบพื้นหลังเทคโนโลยี
+    function createTechBackground() {
+      // เพิ่มเส้นวงจร
+      const techItems = document.querySelectorAll('.tech-item');
+      
+      techItems.forEach(item => {
+        // เพิ่มแอนิเมชัน
+        item.style.animation = `pulse ${3 + Math.random() * 3}s infinite ease-in-out`;
+        item.style.animationDelay = `${Math.random() * 2}s`;
+      });
+      
+      // เพิ่มองค์ประกอบเทคโนโลยีแบบไดนามิก
+      const techBackground = document.querySelector('.tech-background');
+      
+      // เพิ่มเมนบอร์ด
+      const motherboard = document.createElement('div');
+      motherboard.classList.add('tech-item');
+      motherboard.style.position = 'absolute';
+      motherboard.style.top = '50%';
+      motherboard.style.left = '50%';
+      motherboard.style.transform = 'translate(-50%, -50%)';
+      motherboard.style.width = '300px';
+      motherboard.style.height = '400px';
+      motherboard.style.border = '2px solid #38bdf8';
+      motherboard.style.borderRadius = '10px';
+      motherboard.style.boxShadow = '0 0 15px rgba(56, 189, 248, 0.5)';
+      motherboard.style.opacity = '0.3';
+      techBackground.appendChild(motherboard);
+      
+      // เพิ่มเส้นวงจรภายในเมนบอร์ด
+      for (let i = 0; i < 10; i++) {
+        const line = document.createElement('div');
+        line.style.position = 'absolute';
+        line.style.backgroundColor = '#38bdf8';
+        line.style.height = '2px';
+        line.style.width = `${Math.random() * 100 + 50}px`;
+        line.style.top = `${Math.random() * 380 + 10}px`;
+        line.style.left = `${Math.random() * 250 + 25}px`;
+        motherboard.appendChild(line);
+        
+        const vline = document.createElement('div');
+        vline.style.position = 'absolute';
+        vline.style.backgroundColor = '#38bdf8';
+        vline.style.width = '2px';
+        vline.style.height = `${Math.random() * 100 + 50}px`;
+        vline.style.top = `${Math.random() * 300 + 50}px`;
+        vline.style.left = `${Math.random() * 280 + 10}px`;
+        motherboard.appendChild(vline);
+      }
+      
+      // เพิ่มชิปบนเมนบอร์ด
+      for (let i = 0; i < 5; i++) {
+        const chip = document.createElement('div');
+        chip.style.position = 'absolute';
+        chip.style.backgroundColor = 'rgba(56, 189, 248, 0.2)';
+        chip.style.border = '1px solid #38bdf8';
+        chip.style.width = `${Math.random() * 30 + 20}px`;
+        chip.style.height = `${Math.random() * 30 + 20}px`;
+        chip.style.top = `${Math.random() * 350 + 25}px`;
+        chip.style.left = `${Math.random() * 250 + 25}px`;
+        motherboard.appendChild(chip);
+      }
+    }
+
+    // อัพเดทนาฬิกาและวันที่
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      // เพิ่มเลข 0 นำหน้าถ้าจำเป็น
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = timeString;
+      
+      // อัพเดทวันที่
+      document.getElementById('date').textContent = getThaiDate();
+    }
+
+    // เพิ่มเอฟเฟกต์ไฮไลท์แบบโต้ตอบให้กับฟิลด์ฟอร์ม
+    function addFormHighlightEffect() {
       const inputGroups = document.querySelectorAll('.input-group');
       
       inputGroups.forEach(group => {
@@ -900,142 +1118,95 @@
       });
     }
 
-    // Submit form function using JSONP approach
-    function submitForm() {
-      const form = document.getElementById('loginForm');
-      const prefix = document.getElementById('prefix').value;
-      const fullname = document.getElementById('fullname').value;
-      const grade = document.getElementById('grade').value;
-      const subject = document.getElementById('subject').value;
-      const computer = document.getElementById('computer').value;
+    // เพิ่มองค์ประกอบเทคโนโลยีลอยตัว
+    function addFloatingTechElements() {
+      const techItems = [
+        // ข้อมูล SVG ไอคอนคอมพิวเตอร์
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M8 21H16" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 17V21" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="12" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="8" y="16" width="8" height="4" stroke="#38bdf8" stroke-width="2"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="2" width="16" height="20" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="4" y1="18" x2="20" y2="18" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="20" r="1" fill="#38bdf8"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="12" rx="1" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M6 10H18" stroke="#38bdf8" stroke-width="1"/>
+          <path d="M6 14H18" stroke="#38bdf8" stroke-width="1"/>
+        </svg>`,
+        
+        `<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="12" cy="12" r="1" fill="#38bdf8"/>
+        </svg>`
+      ];
       
-      // Validate form
-      if (!prefix || !fullname || !grade || !subject || !computer) {
-        alert('กรุณากรอกข้อมูลให้ครบทุกช่อง');
-        return;
+      const container = document.createElement('div');
+      container.style.position = 'absolute';
+      container.style.top = '0';
+      container.style.left = '0';
+      container.style.width = '100%';
+      container.style.height = '100%';
+      container.style.pointerEvents = 'none';
+      container.style.zIndex = '2';
+      document.body.appendChild(container);
+      
+      for (let i = 0; i < 8; i++) {
+        const tech = document.createElement('div');
+        tech.style.position = 'absolute';
+        tech.style.opacity = '0.2';
+        tech.innerHTML = techItems[Math.floor(Math.random() * techItems.length)];
+        
+        // สุ่มตำแหน่ง
+        tech.style.left = `${Math.random() * 100}%`;
+        tech.style.top = `${Math.random() * 100}%`;
+        
+        // แอนิเมชัน
+        tech.style.animation = `float ${20 + Math.random() * 20}s infinite linear`;
+        tech.style.animationDelay = `${Math.random() * 10}s`;
+        
+        container.appendChild(tech);
       }
-      
-      // Show loading spinner
-      document.getElementById('loading-spinner').style.display = 'block';
-      document.getElementById('submitBtn').disabled = true;
-      
-      // Create form data for URL parameters
-      const formData = new URLSearchParams();
-      formData.append('entry.1226252401', prefix);
-      formData.append('entry.1405412445', fullname);
-      formData.append('entry.193315918', grade);
-      formData.append('entry.994538917', subject);
-      formData.append('entry.1056822339', computer);
-      
-      // Create a script element for JSONP approach
-      const script = document.createElement('script');
-      const callbackName = 'jsonpCallback_' + new Date().getTime();
-      
-      // Define the callback function
-      window[callbackName] = function(response) {
-        // Hide loading spinner
-        document.getElementById('loading-spinner').style.display = 'none';
-        document.getElementById('submitBtn').disabled = false;
-        
-        // Show success alert
-        document.getElementById('alert-box').style.display = 'flex';
-        
-        // Clean up
-        document.head.removeChild(script);
-        delete window[callbackName];
-      };
-      
-      // Set up the script URL with form data
-      const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd0dNWuROW_Le4BfRSzWOkKElLTiEFdndvuUAVBb6CLwPeP_Q/formResponse';
-      script.src = `${baseUrl}?${formData.toString()}&callback=${callbackName}`;
-      
-      // Add error handling
-      script.onerror = function() {
-        // Even if there's an error, we'll consider it successful
-        // because Google Forms doesn't support JSONP but the form submission might still work
-        document.getElementById('loading-spinner').style.display = 'none';
-        document.getElementById('submitBtn').disabled = false;
-        document.getElementById('alert-box').style.display = 'flex';
-        document.head.removeChild(script);
-        delete window[callbackName];
-      };
-      
-      // Add the script to the document
-      document.head.appendChild(script);
-      
-      // Set a timeout in case the callback is never called
-      setTimeout(function() {
-        if (window[callbackName]) {
-          document.getElementById('loading-spinner').style.display = 'none';
-          document.getElementById('submitBtn').disabled = false;
-          document.getElementById('alert-box').style.display = 'flex';
-          
-          if (document.head.contains(script)) {
-            document.head.removeChild(script);
-          }
-          delete window[callbackName];
-        }
-      }, 5000);
-      
-      // Also try the traditional form submission as a backup
-      const traditionalSubmit = function() {
-        const iframe = document.createElement('iframe');
-        iframe.name = 'hidden_iframe';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-        
-        const formElement = document.createElement('form');
-        formElement.method = 'POST';
-        formElement.action = baseUrl;
-        formElement.target = 'hidden_iframe';
-        
-        // Add form fields
-        const fields = [
-          { name: 'entry.1226252401', value: prefix },
-          { name: 'entry.1405412445', value: fullname },
-          { name: 'entry.193315918', value: grade },
-          { name: 'entry.994538917', value: subject },
-          { name: 'entry.1056822339', value: computer }
-        ];
-        
-        fields.forEach(field => {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = field.name;
-          input.value = field.value;
-          formElement.appendChild(input);
-        });
-        
-        document.body.appendChild(formElement);
-        formElement.submit();
-        
-        // Clean up after submission
-        setTimeout(() => {
-          document.body.removeChild(formElement);
-          document.body.removeChild(iframe);
-        }, 5000);
-      };
-      
-      // Execute the traditional submission
-      traditionalSubmit();
     }
 
-    // Go to Google after successful login
-    function goToGoogle() {
-      document.getElementById('alert-box').style.display = 'none';
-      window.open('https://www.google.com', '_blank');
-    }
-
-    // Initialize
+    // เริ่มต้นการทำงาน
     document.addEventListener('DOMContentLoaded', function() {
       createParticles();
       createTechBackground();
-      updateDateTime();
-      setupFormHighlight();
+      updateClock();
+      setInterval(updateClock, 1000);
+      addFormHighlightEffect();
+      addFloatingTechElements();
       
-      // Update clock every second
-      setInterval(updateDateTime, 1000);
+      // แอนิเมชันเข้าสำหรับฟอร์ม
+      setTimeout(() => {
+        document.querySelector('.form-container').style.opacity = '1';
+        document.querySelector('.form-container').style.transform = 'translateY(0)';
+      }, 300);
+      
+      // เพิ่มเหตุการณ์ focus และ blur สำหรับฟิลด์อินพุต
+      const inputElements = document.querySelectorAll('input, select');
+      inputElements.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.parentElement.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+          input.parentElement.parentElement.classList.remove('focused');
+        });
+      });
     });
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93aefcdb40584f51',t:'MTc0NjQzNTAwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b0ec84b1797322',t:'MTc0NjQ1NTMwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
