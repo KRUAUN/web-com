@@ -263,7 +263,36 @@
       cursor: not-allowed;
       transform: none;
     }
+        /* ปุ่มแรก */
+        .button2 {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
+        .button2:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      /* การจัดตำแหน่งปุ่ม */
+    .button-linktodb {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    
     /* ปรับแต่งส่วนของนาฬิกาและวันที่ */
     #datetime-container {
       position: absolute;
@@ -717,7 +746,7 @@
       </div>
 
     <div class="button-linktodb">
-        <a href="https://dashboardlogin-npy.netlify.app/" class="button">แดชบอร์ดการเข้าใช้ห้อง</a>
+        <a href="https://dashboardlogin-npy.netlify.app/" class="button2">แดชบอร์ดการเข้าใช้ห้อง</a>
     </div>
       
       <div class="input-group">
