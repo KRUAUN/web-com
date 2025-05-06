@@ -221,7 +221,7 @@
       border-radius: 16px;
       background: linear-gradient(90deg, #38bdf8, #818cf8);
       color: white;
-      font-size: 28px;
+      font-size: 32px; /* เพิ่มขนาดตัวอักษรจาก 28px เป็น 32px */
       font-weight: 600;
       cursor: pointer;
       transition: all 0.4s ease;
@@ -263,7 +263,7 @@
       cursor: not-allowed;
       transform: none;
     }
-   
+
     /* ปรับแต่งส่วนของนาฬิกาและวันที่ */
     #datetime-container {
       position: absolute;
@@ -610,6 +610,39 @@
       box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
     }
 
+    /* ปุ่มแดชบอร์ด */
+    .dashboard-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .dashboard-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    }
+
+    .dashboard-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
     @media (max-width: 1200px) {
       .tech-decoration {
         display: none;
@@ -660,11 +693,27 @@
       #date {
         font-size: 14px;
       }
+
+      .dashboard-button {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- ปุ่มแดชบอร์ด -->
+  <a href="https://dashboardlogin-npy.netlify.app/" target="_blank" class="dashboard-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7"></rect>
+      <rect x="14" y="3" width="7" height="7"></rect>
+      <rect x="14" y="14" width="7" height="7"></rect>
+      <rect x="3" y="14" width="7" height="7"></rect>
+    </svg>
+    ดูแดชบอร์ด
+  </a>
+
   <div class="tech-circuit"></div>
   <div class="tech-background">
     <div class="tech-item tech-monitor"></div>
@@ -848,6 +897,8 @@
   <script>
     // ฟังก์ชันสำหรับเปิดเว็บไซต์ Google หลังจากลงทะเบียนเสร็จ
     function goToComputer() {
+      // เปิดแท็บใหม่ไปที่ Google
+      window.open('https://www.google.com', '_blank');
       // รีเฟรชหน้าเว็บ
       window.location.reload();
     }
@@ -1208,5 +1259,5 @@
       });
     });
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b0ec84b1797322',t:'MTc0NjQ1NTMwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b5f409127b7337',t:'MTc0NjUwODAzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
